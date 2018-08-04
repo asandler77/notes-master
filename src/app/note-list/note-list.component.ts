@@ -28,4 +28,8 @@ export class NoteListComponent implements OnInit {
   moveToImportantList(note: Note) {
     this.noteService.moveToImportant(note);
   }
+
+  hideTheNote(note: Note) {
+    note.isVisible = false;
+  }
 }
