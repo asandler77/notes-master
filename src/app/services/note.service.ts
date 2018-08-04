@@ -64,6 +64,7 @@ export class NoteService {
       }
 
     }
+
   deleteFromArrayOfNOTImportantNotes(delname: Note) {
     const index: number = this.notes.indexOf(delname);
     if (index !== -1) {
@@ -77,10 +78,11 @@ export class NoteService {
   //     this.deleteByIdFromImportant(idToDelete);
   // }
     public update(note: Note) {
-      console.log('before' + this.notes);
+      console.log('before' + note.body);
       for ( let noteitter of this.notes) {
         if (noteitter.id === note.id) {
           this.deleteFromArrayOfNOTImportantNotes(noteitter);
+          this.addNoteToNotImportant(note);
         }
         console.log(noteitter.id);
       }

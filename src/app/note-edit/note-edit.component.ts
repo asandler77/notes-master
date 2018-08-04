@@ -7,7 +7,7 @@ import { NoteService } from '../services/note.service';
 @Component({
   selector: 'app-note-edit',
   templateUrl: './note-edit.component.html',
-  styleUrls: ['./note-edit.component.css']
+  styleUrls: ['../note-list/note-list.component.css']
 })
 export class NoteEditComponent implements OnInit {
 
@@ -32,11 +32,6 @@ export class NoteEditComponent implements OnInit {
   }
 
   onsubmitNote(notee: Note) {
-    console.log(notee.body + 'onsubmitNote');
-     this.updateTheNote(notee);
-
+    this.service.update(notee);
     }
-  updateTheNote(note) {
-      this.service.update(note);
-  }
 }
