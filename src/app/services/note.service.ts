@@ -92,20 +92,20 @@ export class NoteService {
 
   moveToImportant(note: Note) {
     // this.deleteById(note.id, );
-    this.deleteById(note.id, false);
+    this.deleteById(note, false);
     this.addNoteToImportant(note);
   }
 
 
   moveToNOTImportant(note: Note) {
-    this.deleteById(note.id, true);
+    this.deleteById(note, true);
     this.addNoteToNotImportant(note);
 
   }
-  public deleteById(idToDelete: number, isImportant: Boolean) {
+  public deleteById(note: Note, isImportant: Boolean) {
     const array = isImportant ? this.importantNotes : this.notes;
     for (const notevar of array) {
-      if (notevar.id === idToDelete) {
+      if (notevar.id === note.id) {
           this.deleteFromSpecificArray(notevar, array);
         }
       }

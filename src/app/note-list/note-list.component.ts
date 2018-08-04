@@ -21,9 +21,8 @@ export class NoteListComponent implements OnInit {
     });
   }
 
-  deleteTheNote(id) {
-    console.log(id);
-    this.noteService.deleteById(id, false);
+  deleteTheNote(note) {
+    this.noteService.deleteById(note, false);
   }
 
   moveToImportantList(note: Note) {

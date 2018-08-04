@@ -24,8 +24,8 @@ export class ImportantComponent implements OnInit {
     this.noteService.moveToNOTImportant(note);
 
   }
-  deleteTheNote(id) {
-    this.noteService.deleteById(id, true);
+  deleteTheNote(note) {
+    this.noteService.deleteById(note, true);
   }
 
 }
