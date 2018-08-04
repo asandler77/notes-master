@@ -8,8 +8,9 @@
 		<!--</div>-->
 	</div>
 
-	<div class="note" *ngFor="let note of notes">
-		<div class="note_tile">
+	<div [hidden]="!note.isVisible" class="note" *ngFor="let note of notes">
+    <!--<div *ngIf="note.isVisible">-->
+    <div class="note_tile">
 			{{ note.title }}
 		</div>
 		<div class="note_body">
@@ -21,6 +22,6 @@
     <div >
       <input class="male-important-note" type="submit" value="Make the Note Important" (click)="moveToImportantList(note)"/>
     </div>
+    <!--</div>-->
 	</div>
   <div id="call_for_action" [routerLink]="['/important']">To Important notes!</div>
-</div>
