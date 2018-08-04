@@ -88,14 +88,6 @@ export class NoteService {
 
     }
 
-  // private deleteById(idToDelete: any) {
-  //   for (const notevar of this.notes) {
-  //     if (notevar.id === idToDelete) {
-  //       this.deleteFromArrayOfNOTImportantNotes(notevar);
-  //     }
-  //   }
-  // }
-
   moveToImportant(note: Note) {
     // this.deleteById(note.id, );
     this.deleteById(note.id, false);
@@ -109,20 +101,18 @@ export class NoteService {
 
   }
   public deleteById(idToDelete: number, isImportant: Boolean) {
-    for (const notevar of this.importantNotes) {
+    const array = isImportant ? this.importantNotes : this.notes;
+    for (const notevar of array) {
       if (notevar.id === idToDelete) {
-        if (isImportant) {
-          this.deleteFromArrayImportantNotes(notevar);
-        } else {
-          this.deleteFromArrayOfNOTImportantNotes(notevar);
+          this.deleteFromSpecificArray(notevar, array);
         }
       }
     }
-  }
-  deleteFromArrayImportantNotes(delname: Note) {
-    const index: number = this.importantNotes.indexOf(delname);
+
+  deleteFromSpecificArray(delname: Note, array: Note[]) {
+    const index: number = array.indexOf(delname);
     if (index !== -1) {
-      this.importantNotes.splice(index, 1);
+      array.splice(index, 1);
       console.log(delname.id + ' will be deleted');
 
     }

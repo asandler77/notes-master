@@ -26,7 +26,7 @@ export class NoteListComponent implements OnInit {
     this.noteService.deleteById(id, false);
   }
 
-  toImportantList(note: Note) {
+  moveToImportantList(note: Note) {
     this.noteService.moveToImportant(note);
   }
 }

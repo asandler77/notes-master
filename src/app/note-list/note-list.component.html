@@ -19,7 +19,7 @@
       <input class="delete-note" type="submit" value="Delete the Note" (click)="deleteTheNote(note.id)"/>
     </div>
     <div >
-      <input class="male-important-note" type="submit" value="Make the Note Important" (click)="toImportantList(note)"/>
+      <input class="male-important-note" type="submit" value="Make the Note Important" (click)="moveToImportantList(note)"/>
     </div>
 	</div>
   <div id="call_for_action" [routerLink]="['/important']">To Important notes!</div>
