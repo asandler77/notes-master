@@ -25,4 +25,8 @@
     </div>
     <!--</div>-->
 	</div>
-  <div id="call_for_action" [routerLink]="['/important']">To Important notes!</div>
+  <div class="call_for_action" [routerLink]="['/important']">To Important notes!</div>
+  <!--<div class="call_for_action" *ngIf="isClicked">Note deleted </div>-->
+  <div class="ifdeleted" [routerLink]="['/notes']" *ngIf="isClicked" (click)="undoAction()"> Note deleted you can still undo</div>
+
+

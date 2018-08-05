@@ -11,6 +11,8 @@ export class NoteListComponent implements OnInit {
 
   notes: Note[] = [];
   note: Note;
+  isClicked = false;
+  clickedNote: Note;
 
   constructor(private noteService: NoteService) { }
 
@@ -31,5 +33,11 @@ export class NoteListComponent implements OnInit {
 
   hideTheNote(note: Note) {
     note.isVisible = false;
+    this.clickedNote = note;
+    this.isClicked = true;
+  }
+
+  undoAction() {
+    this.clickedNote.isVisible = true;
   }
 }
