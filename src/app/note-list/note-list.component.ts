@@ -39,5 +39,6 @@ export class NoteListComponent implements OnInit {
 
   undoAction() {
     this.clickedNote.isVisible = true;
+    this.isClicked = false;
   }
 }

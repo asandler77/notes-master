@@ -26,7 +26,7 @@
   margin: auto;
 }
 
-.call_for_action {
+#call_for_action {
   font-size:32px;
   text-align: center;
   background: aqua;
@@ -49,4 +49,9 @@
   background: #E91E63;
   position: fixed;
   right: 0;
+}
+.note_title{
+  color: aliceblue;
+  background: green;
+  width: 200px;
 }
